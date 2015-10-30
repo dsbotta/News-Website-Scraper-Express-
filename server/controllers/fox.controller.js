@@ -1,5 +1,6 @@
 var request = require('request'),
-	cheerio = require('cheerio');
+	cheerio = require('cheerio'),
+	path = require('path');
 
 exports.render = function(req, res) {
 
@@ -50,7 +51,9 @@ exports.render = function(req, res) {
 				
 			}
 
-			respond.json(stories);
+			respond.render(path.resolve('public/search.ejs'), {
+				news: stories
+			});
 	});
 
 };

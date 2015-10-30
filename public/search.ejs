@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Your News</title>
+		<link type="text/css" rel="stylesheet" href="css/style.css" />
+	<head>
+	<body ng-app="app">
+		<h1>Your News!</h1>
+		<% for(var i=0; i<news.length; i++) {%>
+			<li>
+				<a href="<%= news[i].articleLink %>">
+					<h2><%= news[i].title %></h2>
+				</a>
+			</li>
+		<% } %>
+
+	<script src="../node_modules/angular/angular.js"></script>
+	<script src="/js/modules/routes.js"></script>
+	<script src="/js/controllers/search.controller.js"></script>
+	</body>
+</html>
